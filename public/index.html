@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0b1020">
+  <title>TURAN — TRN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">T</div><div><b>TURAN</b><small>THE DIGITAL FRONTIER</small></div></div>
+      <div class="user-pill"><span class="online-dot"></span><span id="playerName">Игрок</span></div>
+    </header>
+
+    <main>
+      <section class="hero panel">
+        <div class="eyebrow">ВАШ ИГРОВОЙ БАЛАНС</div>
+        <div class="balance-line"><span id="balance">0</span><span class="coin-symbol">✦</span></div>
+        <div class="token-label">TRN POINTS <span class="live-tag">● LIVE</span></div>
+        <div class="stats-row">
+          <div><small>Доход / час</small><b>+<span id="income">0</span></b></div>
+          <div><small>Сила касания</small><b>×<span id="tapPower">1</span></b></div>
+          <div><small>Друзья</small><b id="friends">0</b></div>
+        </div>
+      </section>
+
+      <section class="mine-section">
+        <div class="section-heading"><div><span class="eyebrow">МИНИ-ИГРА</span><h1>Добывай TRN</h1></div><span class="rank-chip">РОВЕНЬ <b id="rank">01</b></span></div>
+        <div class="tap-stage">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <button id="tapButton" class="tap-button" aria-label="Добыть TRN">
+            <div class="core-glow"></div><div class="turan-emblem"><span>T</span><i>✦</i></div>
+          </button>
+          <div class="tap-hint">НАЖИМАЙ, ЧТОБЫ ДОБЫВАТЬ</div>
+        </div>
+        <div class="energy-card">
+          <div class="energy-top"><span>⚡ ЭНЕРГИЯ</span><b><span id="energy">1000</span> / <span id="maxEnergy">1000</span></b></div>
+          <div class="energy-track"><div id="energyFill" class="energy-fill"></div></div>
+          <small>Энергия восстанавливается автоматически</small>
+        </div>
+      </section>
+
+      <section id="mine" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">РАЗВИТИЕ</span><h2>Улучшения</h2></div><span class="subtle">УСИЛИВАЙ ДОХОД</span></div>
+        <div id="upgradeList" class="upgrade-list"></div>
+      </section>
+
+      <section id="tasks" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">АКТИВНОСТЬ</span><h2>Задания</h2></div><span class="subtle">ПОЛУЧАЙ НАГРАДЫ</span></div>
+        <div id="taskList" class="task-list"></div>
+      </section>
+
+      <section id="friends" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">СООБЩЕСТВО</span><h2>Приглашай друзей</h2></div></div>
+        <div class="invite-card">
+          <div class="invite-icon">↗</div><h3>Расти вместе с TURAN</h3>
+          <p>Поделись своей ссылкой. Приглашённые игроки появятся в твоей статистике.</p>
+          <button id="shareButton" class="primary-button">Пригласить друга</button>
+          <small id="refCode">Твоя реферальная ссылка создаётся…</small>
+        </div>
+      </section>
+
+      <section id="leaders" class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">СООБЩЕСТВО</span><h2>Лидеры</h2></div></div>
+        <div id="leaderboard" class="leaderboard"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target="top"><span>⌂</span><small>Главная</small></button>
+      <button class="nav-item" data-target="mine"><span>✧</span><small>Улучшения</small></button>
+      <button class="nav-item" data-target="tasks"><span>▤</span><small>Задания</small></button>
+      <button class="nav-item" data-target="friends"><span>♧</span><small>Друзья</small></button>
+      <button class="nav-item" data-target="leaders"><span>♜</span><small>Рейтинг</small></button>
+    </nav>
+    <div id="toast" class="toast"></div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
